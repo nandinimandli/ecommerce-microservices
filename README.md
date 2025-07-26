@@ -112,3 +112,26 @@ API Gateway → JWT verified with Cognito
 Spring Boot Admin Microservices
      ↓
 MySQL RDS
+
+
+```bash
+curl -X POST http://65.2.129.237:8081/users/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Suri",
+    "email": "suri@example.com",
+    "password": "password123"
+}'
+
+```
+
+```bash
+curl -X POST http://65.2.129.237:8083/orders \
+  -H "Content-Type: application/json" \
+  -d '{
+    "userId": 1,
+    "productId": 101,
+    "quantity": 2,
+    "price": 499.99
+}'
+```
